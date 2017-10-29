@@ -47,11 +47,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         super.viewDidLoad()
         ref = Database.database().reference()
         
-        var swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeUp))
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeUp))
         swipeUp.direction = .up
         volumeView.addGestureRecognizer(swipeUp)
         
-        var swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeDown))
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeDown))
         swipeDown.direction = .down
         volumeView.addGestureRecognizer(swipeDown)
     actionEnabled = "None"
@@ -66,14 +66,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                                 print("something went wrong with image")
                             } else {
                                 DispatchQueue.main.async {
-                                    if let uiimage = UIImage(data: data!) as? UIImage {
+                                    if let discreteData = data, let uiimage = UIImage(data: discreteData) {
+                                        print(String.init(describing: self.snapshotImageView.image?.size))
                                         self.snapshotImageView.image = uiimage
-                                        print(self.snapshotImageView.image?.size)
                                     }
                                 }
                             }
-                            
-                            
                         }).resume()
                     }
                 }
@@ -120,8 +118,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             if snapshotImageView.frame.contains(touch.location(in: self.view))  && actionEnabled == "pointer" {
-                var x = touch.location(in: snapshotImageView).x / snapshotImageView.frame.width
-                var y = 1 - (touch.location(in: snapshotImageView).y / snapshotImageView.frame.height)
+                let x = touch.location(in: snapshotImageView).x / snapshotImageView.frame.width
+                let y = 1 - (touch.location(in: snapshotImageView).y / snapshotImageView.frame.height)
                 print("x:\(x), y:\(y)")
                 ref.child(currentRoomNumber).child("interactive_settings").child("highlight_coordinates").updateChildValues(["x" : x, "y" : y])
             }
@@ -132,8 +130,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         if let touch = touches.first {
             
             if snapshotImageView.frame.contains(touch.location(in: self.view)) &&  actionEnabled == "pointer" {
-                var x = touch.location(in: snapshotImageView).x / snapshotImageView.frame.width
-                var y = 1 - (touch.location(in: snapshotImageView).y / snapshotImageView.frame.height)
+                let x = touch.location(in: snapshotImageView).x / snapshotImageView.frame.width
+                let y = 1 - (touch.location(in: snapshotImageView).y / snapshotImageView.frame.height)
                 print("x:\(x), y:\(y)")
                 ref.child(currentRoomNumber).child("interactive_settings").child("highlight_coordinates").updateChildValues(["x" : x, "y" : y])
             }
@@ -215,6 +213,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         // We keep a reference to the task so that it can be cancelled.
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
             var isFinal = false
+            if(isFinal == false) {} // silences compiler warning
             
             if let result = result {
                 let segments = result.bestTranscription.segments
