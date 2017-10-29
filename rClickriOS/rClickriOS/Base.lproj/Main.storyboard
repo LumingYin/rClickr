@@ -11,18 +11,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Remote Clickr-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rClickriOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Remote Clickr" id="BYZ-38-t0r" customClass="ViewController" customModule="rClickriOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9s-PE-kfv">
-                                <rect key="frame" x="68" y="441" width="83" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="prev_slide"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9s-PE-kfv">
+                                <rect key="frame" x="93" y="461" width="83" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="8N2-Rg-HzL"/>
+                                    <constraint firstAttribute="height" constant="83" id="IbT-57-Ceq"/>
+                                </constraints>
+                                <state key="normal" image="prevSlideBtn"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="25"/>
@@ -30,19 +33,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="prevSlide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQX-wH-Nsh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7R-4i-pyv">
-                                <rect key="frame" x="209" y="441" width="86" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="next_slide"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="nextSlide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gin-69-AZ9"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5NK-al-L3i">
@@ -106,16 +96,46 @@
                                     <constraint firstItem="Adi-sm-T4B" firstAttribute="top" secondItem="5gL-bt-5uV" secondAttribute="top" id="uze-ts-Seh"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7R-4i-pyv">
+                                <rect key="frame" x="229" y="461" width="86" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="C9D-f5-X9w"/>
+                                    <constraint firstAttribute="width" constant="86" id="l3V-5X-876"/>
+                                </constraints>
+                                <state key="normal" image="nextSlideBtn"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextSlide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gin-69-AZ9"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42c-v3-yDt">
+                                <rect key="frame" x="195" y="440" width="25" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="fzO-SV-38u"/>
+                                    <constraint firstAttribute="height" constant="128" id="sVr-N6-EJz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="42c-v3-yDt" firstAttribute="top" secondItem="5gL-bt-5uV" secondAttribute="bottom" constant="5" id="797-xO-Obu"/>
+                            <constraint firstItem="M9s-PE-kfv" firstAttribute="top" secondItem="5gL-bt-5uV" secondAttribute="bottom" constant="26" id="AO9-Ki-dDy"/>
+                            <constraint firstItem="42c-v3-yDt" firstAttribute="leading" secondItem="M9s-PE-kfv" secondAttribute="trailing" constant="19" id="DtW-Ox-CLq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5NK-al-L3i" secondAttribute="trailing" id="K8i-lg-0ub"/>
                             <constraint firstItem="5gL-bt-5uV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:10" id="OdL-fI-tHU"/>
                             <constraint firstItem="5gL-bt-5uV" firstAttribute="top" secondItem="5NK-al-L3i" secondAttribute="bottom" id="S0c-sh-8gA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5gL-bt-5uV" secondAttribute="trailing" id="YHR-OH-mIY"/>
                             <constraint firstItem="5gL-bt-5uV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YYc-tt-z3M"/>
                             <constraint firstItem="5NK-al-L3i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZNe-vv-Hsq"/>
+                            <constraint firstItem="U7R-4i-pyv" firstAttribute="leading" secondItem="42c-v3-yDt" secondAttribute="trailing" constant="9" id="cYi-Bb-5qL"/>
+                            <constraint firstItem="U7R-4i-pyv" firstAttribute="top" secondItem="5gL-bt-5uV" secondAttribute="bottom" constant="26" id="foi-Wc-aYu"/>
                             <constraint firstItem="5NK-al-L3i" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:3" id="gc3-g4-c8S"/>
+                            <constraint firstItem="42c-v3-yDt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oqm-n2-wB0"/>
                             <constraint firstItem="5NK-al-L3i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vor-Td-7uS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -129,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="1535.2" y="120.98950524737631"/>
         </scene>
-        <!--Remote Clickr-->
+        <!--Connect-->
         <scene sceneID="i3Y-C3-bI4">
             <objects>
                 <viewController id="Z0a-Ng-Jfj" customClass="RoomNumberViewController" customModule="rClickriOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,7 +213,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h4c-95-OOe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Remote Clickr" largeTitleDisplayMode="always" id="Hmr-lX-Ucw"/>
+                    <navigationItem key="navigationItem" title="Connect" id="Hmr-lX-Ucw"/>
                     <connections>
                         <outlet property="circleView" destination="N6t-HS-uiQ" id="4S0-oK-Sno"/>
                         <outlet property="roomNumberTextField" destination="zjZ-sW-7EN" id="bBa-dT-uIj"/>
@@ -228,8 +248,8 @@
         <image name="btnreddot" width="187" height="160"/>
         <image name="image" width="512" height="634"/>
         <image name="micIconBtn" width="187" height="160"/>
-        <image name="next_slide" width="419" height="419"/>
-        <image name="prev_slide" width="419" height="419"/>
+        <image name="nextSlideBtn" width="327" height="327"/>
+        <image name="prevSlideBtn" width="327" height="327"/>
         <image name="volSliderBtn" width="187" height="160"/>
     </resources>
 </document>
