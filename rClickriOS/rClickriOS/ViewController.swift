@@ -10,9 +10,14 @@ import UIKit
 import FirebaseCommunity
 
 class ViewController: UIViewController {
-
+    
+    var ref: DatabaseReference!
+    var currentRoomNumber: String = "0000"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -22,9 +27,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func prevSlide(_ sender: UIButton) {
+        self.ref.child("2163").childByAutoId().setValue(["timestamp" : Date.init().description, "action": "keydown", "completed": "false"])
     }
     
     @IBAction func nextSlide(_ sender: UIButton) {
+        self.ref.child("2163").childByAutoId().setValue(["timestamp" : Date.init().description, "action": "keyup", "completed": "false"])
     }
 
     
