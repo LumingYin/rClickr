@@ -214,12 +214,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 for i in array {
                     wordSet.insert(i)
                 }
-                if wordSet.contains("next") || wordSet.contains("previous") || wordSet.contains("Next") || wordSet.contains("Previous") {
+                if wordSet.contains("next") || wordSet.contains("previous") || wordSet.contains("Next") || wordSet.contains("Previous")||wordSet.contains("last") || wordSet.contains("Last"){
                     if wordSet.contains("next") || wordSet.contains("Next") {
                         self.nextSlide(nil)
                         print("next")
                     }
-                    if wordSet.contains("previous")  || wordSet.contains("Previous"){
+                    if wordSet.contains("previous")  || wordSet.contains("Previous") || wordSet.contains("last") || wordSet.contains("Last"){
                         self.prevSlide(nil)
                         print("prev")
                     }
