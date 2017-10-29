@@ -90,8 +90,6 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
         FirebaseApp.configure()
         generateRoomNumber()
         ref = Database.database().reference()
@@ -108,55 +106,60 @@ class ViewController: NSViewController {
             
 
             for (randomToken, actionDictionary) in postDict {
-                if let coordinates = actionDictionary["highlight_coordinates"] as? Dictionary<String, Float> {
-//                    print(coordinates)
-                    self.showRedDotAt(dict: coordinates)
-                    
-                }
-                guard let action = actionDictionary["action"] as? String else {
-                    break
-                }
-                print("we are this far now!")
-                if (action == "keydown") {
-                    print("pressing keydown")
-                    DispatchQueue.main.async {
-                        self.simulateKeyPress(0x7D)
-                        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { (timer) in
-                            self.uploadScreenshot()
-                        })
-                    }
-                } else if (action == "keyup") {
-                    print("pressing keyup")
-                    DispatchQueue.main.async {
-                        self.simulateKeyPress(0x7E)
-                        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { (timer) in
-                            self.uploadScreenshot()
-                        })
-                    }
-                } else if (action == "volumeup") {
-                    print("pressing volup")
-                    DispatchQueue.main.async {
-                        self.redDotController.increaseVolume()
+                if (actionDictionary["wants_new_image"] as? Bool) != nil && (actionDictionary["wants_new_image"] as? Bool) == true {
+                    childRef.child(randomToken).child("wants_new_image").setValue(false)
+                    self.uploadScreenshot()
+                } else {
+                    if let coordinates = actionDictionary["highlight_coordinates"] as? Dictionary<String, Float> {
+                        //                    print(coordinates)
+                        self.showRedDotAt(dict: coordinates)
                         
                     }
-
-                } else if (action == "volumedown") {
-                    print("pressing voldown")
-                    DispatchQueue.main.async {
-                        self.redDotController.decreaseVolume()
+                    guard let action = actionDictionary["action"] as? String else {
+                        break
                     }
-
-   
-                } else if (action == "space") {
-                    print("pressing space")
-                    DispatchQueue.main.async {
-                        self.simulateKeyPress(0x31)
+                    print("we are this far now!")
+                    if (action == "keydown") {
+                        print("pressing keydown")
+                        DispatchQueue.main.async {
+                            self.simulateKeyPress(0x7D)
+                            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { (timer) in
+                                self.uploadScreenshot()
+                            })
+                        }
+                    } else if (action == "keyup") {
+                        print("pressing keyup")
+                        DispatchQueue.main.async {
+                            self.simulateKeyPress(0x7E)
+                            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { (timer) in
+                                self.uploadScreenshot()
+                            })
+                        }
+                    } else if (action == "volumeup") {
+                        print("pressing volup")
+                        DispatchQueue.main.async {
+                            self.redDotController.increaseVolume()
+                            
+                        }
+                        
+                    } else if (action == "volumedown") {
+                        print("pressing voldown")
+                        DispatchQueue.main.async {
+                            self.redDotController.decreaseVolume()
+                        }
+                        
+                        
+                    } else if (action == "space") {
+                        print("pressing space")
+                        DispatchQueue.main.async {
+                            self.simulateKeyPress(0x31)
+                        }
+                    } else if (action == "blank") {
+                        print("switching blank or not blank")
+                        self.redDotController.blackoutSwitch()
                     }
-                } else if (action == "blank") {
-                    print("switching blank or not blank")
-                    self.redDotController.blackoutSwitch()
+                    childRef.child(randomToken).removeValue()
                 }
-                childRef.child(randomToken).removeValue()
             }
         })
         

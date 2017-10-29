@@ -120,15 +120,27 @@
                                     <constraint firstAttribute="height" constant="128" id="sVr-N6-EJz"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9M2-my-CLz">
+                                <rect key="frame" x="0.0" y="555" width="414" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="m9x-pW-fU6"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="forceRefreshImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MZM-T4-6kW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9M2-my-CLz" secondAttribute="trailing" id="2ca-6r-LOT"/>
                             <constraint firstItem="42c-v3-yDt" firstAttribute="top" secondItem="5gL-bt-5uV" secondAttribute="bottom" constant="5" id="797-xO-Obu"/>
+                            <constraint firstItem="9M2-my-CLz" firstAttribute="top" secondItem="U7R-4i-pyv" secondAttribute="bottom" constant="8" id="9AK-hl-aEL"/>
                             <constraint firstItem="M9s-PE-kfv" firstAttribute="top" secondItem="5gL-bt-5uV" secondAttribute="bottom" constant="26" id="AO9-Ki-dDy"/>
                             <constraint firstItem="42c-v3-yDt" firstAttribute="leading" secondItem="M9s-PE-kfv" secondAttribute="trailing" constant="19" id="DtW-Ox-CLq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5NK-al-L3i" secondAttribute="trailing" id="K8i-lg-0ub"/>
                             <constraint firstItem="5gL-bt-5uV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:10" id="OdL-fI-tHU"/>
                             <constraint firstItem="5gL-bt-5uV" firstAttribute="top" secondItem="5NK-al-L3i" secondAttribute="bottom" id="S0c-sh-8gA"/>
+                            <constraint firstItem="9M2-my-CLz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SSm-J1-hkd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5gL-bt-5uV" secondAttribute="trailing" id="YHR-OH-mIY"/>
                             <constraint firstItem="5gL-bt-5uV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YYc-tt-z3M"/>
                             <constraint firstItem="5NK-al-L3i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZNe-vv-Hsq"/>
@@ -147,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1535.2" y="120.98950524737631"/>
+            <point key="canvasLocation" x="1534.7826086956522" y="120.65217391304348"/>
         </scene>
         <!--Connect-->
         <scene sceneID="i3Y-C3-bI4">

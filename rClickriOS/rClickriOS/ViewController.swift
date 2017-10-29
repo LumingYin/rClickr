@@ -79,6 +79,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
 
     override func viewDidAppear(_ animated: Bool) {
+        ref.child(currentRoomNumber).child("interactive_settings").child("wants_new_image").setValue(true)
+        
         speechRecognizer.delegate = self
         
         SFSpeechRecognizer.requestAuthorization { authStatus in
@@ -158,6 +160,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "blank", "completed": "false"])
     }
     
+    @IBAction func forceRefreshImage(_ sender: Any) {
+        ref.child(currentRoomNumber).child("interactive_settings").child("wants_new_image").setValue(true)
+    }
     
     @objc func swipeUp() {
         self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "volumeup", "completed": "false"])
