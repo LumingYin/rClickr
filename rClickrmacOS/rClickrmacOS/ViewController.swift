@@ -11,18 +11,26 @@ import FirebaseCommunity
 import Carbon.HIToolbox
 
 
+//class MainWindow: NSWindow {
+//    override func awakeFromNib() {
+//
+//    }
+//}
+
 class ViewController: NSViewController {
     var ref: DatabaseReference!
     var currentRoomNumber: String = "0000"
+    var redDotController: RedDotController!
+    
     @IBOutlet weak var currentRoomNumberIndicator: NSTextField!
     
-    @IBAction func takeScreenshot(_ sender: NSButton) {
+    func uploadScreenshot() {
         let screenshot = getCompressedJPEGScreenshot()
         
         let storage = Storage.storage()
         let storageRef = storage.reference()
         let uuid = UUID().uuidString
-
+        
         let screenshotImageRef = storageRef.child("images/\(uuid).jpg")
         
         let uploadTask = screenshotImageRef.putData(screenshot, metadata: nil) { (metadata, error) in
@@ -36,12 +44,21 @@ class ViewController: NSViewController {
                 self.ref.child(self.currentRoomNumber).child("interactive_settings").setValue(["screenshot_url": downloadURLString])
             }
         }
-
+    }
+    
+    @IBAction func takeScreenshot(_ sender: NSButton) {
+        uploadScreenshot()
 //        do {
 //            try jpegData.write(to: URL.init(fileURLWithPath: "/tmp/thumb.jpg"), options: .atomic)
 //        } catch {
 //            print("debug write failed")
 //        }
+    }
+    
+    func showRedDotAt(dict: Dictionary<String, Float>) {
+        let center = NotificationCenter.default
+//        let dict = ["x": 0.8, "y": 0.6]
+        center.post(name: NSNotification.Name(rawValue: "shouldMoveRedDot"), object: nil, userInfo: dict)
     }
     
     func getCompressedJPEGScreenshot() -> Data {
@@ -62,9 +79,19 @@ class ViewController: NSViewController {
         currentRoomNumberIndicator.stringValue = currentRoomNumber.inserting(separator: " ", every: 1)
 //        currentRoomNumber = "2163"
     }
+    
+    override func viewDidAppear() {
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.titleVisibility = .hidden
+        self.view.window?.styleMask.insert(.fullSizeContentView)
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
         FirebaseApp.configure()
         generateRoomNumber()
         ref = Database.database().reference()
@@ -72,9 +99,20 @@ class ViewController: NSViewController {
         
         let childRef = ref.child(currentRoomNumber)
         
+        self.redDotController = RedDotController.init()
+        self.redDotController.configurateEverything()
+
+        
         let refHandle = childRef.observe(DataEventType.value, with: { (snapshot) in
             let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+            
+
             for (randomToken, actionDictionary) in postDict {
+                if let coordinates = actionDictionary["highlight_coordinates"] as? Dictionary<String, Float> {
+//                    print(coordinates)
+                    self.showRedDotAt(dict: coordinates)
+                    
+                }
                 guard let action = actionDictionary["action"] as? String else {
                     break
                 }
@@ -83,31 +121,74 @@ class ViewController: NSViewController {
                     print("pressing keydown")
                     DispatchQueue.main.async {
                         self.simulateKeyPress(0x7D)
+                        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { (timer) in
+                            self.uploadScreenshot()
+                        })
                     }
                 } else if (action == "keyup") {
                     print("pressing keyup")
                     DispatchQueue.main.async {
                         self.simulateKeyPress(0x7E)
+                        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { (timer) in
+                            self.uploadScreenshot()
+                        })
                     }
+                } else if (action == "volumeup") {
+                    print("pressing volup")
+                    DispatchQueue.main.async {
+                        self.redDotController.increaseVolume()
+                        
+                    }
+
+                } else if (action == "volumedown") {
+                    print("pressing voldown")
+                    DispatchQueue.main.async {
+                        self.redDotController.decreaseVolume()
+                    }
+
+   
+                } else if (action == "space") {
+                    print("pressing space")
+                    DispatchQueue.main.async {
+                        self.simulateKeyPress(0x31)
+                    }
+                } else if (action == "blank") {
+                    print("switching blank or not blank")
+                    self.redDotController.blackoutSwitch()
                 }
                 childRef.child(randomToken).removeValue()
             }
         })
+        
+//        let interactiveSettingsRef = childRef.child("interactive_settings")
+//        let interactHandle = interactiveSettingsRef.observe(DataEventType.value, with: { (snapshot) in
+//            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+//
+//            }
+//        })
+        
+        
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
         
 //        if let fullScreenWindow = NSStoryboard.init(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "DotProjectionWindow")) as? DotProjectionWindowController {
+//            fullScreenWindow.window?.level = NSWindow.Level(rawValue: Int(9999))
+//            fullScreenWindow.window?.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+//
 //            fullScreenWindow.showWindow(nil)
 //        }
-        let test_panel = NSPanel.init(contentRect: NSMakeRect(300, 300, 500, 500), styleMask: NSWindow.StyleMask(rawValue: NSWindow.StyleMask.RawValue(UInt8(NSWindow.StyleMask.titled.rawValue) | UInt8(NSWindow.StyleMask.closable.rawValue))), backing: .buffered, defer: true)
-        test_panel.isReleasedWhenClosed = true
-        test_panel.hidesOnDeactivate = false
-        test_panel.isFloatingPanel = true
-        test_panel.styleMask = NSWindow.StyleMask(rawValue: NSWindow.StyleMask.RawValue(UInt8(NSWindow.StyleMask.borderless.rawValue) | UInt8(NSPanel.StyleMask.nonactivatingPanel.rawValue)))
-        test_panel.level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(kCGMainMenuWindowLevel - 1))
-//        test_panel.collectionBehavior = UInt8(NSWindow.CollectionBehavior.canJoinAllSpaces.rawValue) | NSWindow.CollectionBehavior.fullScreenAuxiliary
+        
+//        let test_panel = NSPanel.init(contentRect: NSMakeRect(300, 300, 500, 500), styleMask: NSWindow.StyleMask(rawValue: NSWindow.StyleMask.RawValue(UInt8(NSWindow.StyleMask.titled.rawValue) | UInt8(NSWindow.StyleMask.closable.rawValue))), backing: .buffered, defer: true)
+//        test_panel.isReleasedWhenClosed = true
+//        test_panel.hidesOnDeactivate = false
+//        test_panel.isFloatingPanel = true
+//        test_panel.styleMask = NSWindow.StyleMask(rawValue: NSWindow.StyleMask.RawValue(UInt8(NSWindow.StyleMask.borderless.rawValue) | UInt8(NSPanel.StyleMask.nonactivatingPanel.rawValue)))
+//        test_panel.level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(kCGMainMenuWindowLevel - 1))
+//        test_panel.collectionBehavior = NSWindow.CollectionBehavior(rawValue: NSWindow.CollectionBehavior.RawValue(UInt8(NSWindow.CollectionBehavior.canJoinAllSpaces.rawValue) | UInt8(NSWindow.CollectionBehavior.fullScreenAuxiliary.rawValue)))
+//        test_panel.center()
+//        test_panel.orderFront(nil)
 //        test_panel.c
     }
 

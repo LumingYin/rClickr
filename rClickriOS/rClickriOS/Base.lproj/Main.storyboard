@@ -10,6 +10,12 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GurmukhiMN.ttc">
+            <string>GurmukhiMN</string>
+            <string>GurmukhiMN-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -133,10 +139,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZg-i4-sgs">
-                                <rect key="frame" x="105" y="582" width="164" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="vXR-f0-K94">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZg-i4-sgs">
+                                <rect key="frame" x="106" y="382" width="163" height="47"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="25"/>
                                 <state key="normal" title="Start Sliding!">
                                     <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -144,33 +152,48 @@
                                     <action selector="startSlidingBtnPressed:" destination="Z0a-Ng-Jfj" eventType="touchUpInside" id="ply-zS-JdU"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zjZ-sW-7EN">
-                                <rect key="frame" x="71" y="318" width="233" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zjZ-sW-7EN">
+                                <rect key="frame" x="71" y="277" width="233" height="30"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="Z0a-Ng-Jfj" id="CWx-l7-vKI"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please type in your room number below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw8-80-tvq">
-                                <rect key="frame" x="46" y="190" width="313" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please type in your room number below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw8-80-tvq">
+                                <rect key="frame" x="16" y="193" width="343" height="24"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="17"/>
+                                <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzF-h1-J6a">
-                                <rect key="frame" x="62" y="90" width="297" height="112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzF-h1-J6a">
+                                <rect key="frame" x="60" y="114" width="255" height="49"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="35"/>
                                 <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vXR-f0-K94" firstAttribute="top" secondItem="kla-Fb-x64" secondAttribute="top" id="DNB-u3-KvX"/>
+                            <constraint firstItem="KzF-h1-J6a" firstAttribute="leading" secondItem="h4c-95-OOe" secondAttribute="leading" constant="60" id="EMS-iM-FZf"/>
+                            <constraint firstItem="vXR-f0-K94" firstAttribute="trailing" secondItem="h4c-95-OOe" secondAttribute="trailing" id="F7G-mf-Eti"/>
+                            <constraint firstItem="h4c-95-OOe" firstAttribute="trailing" secondItem="KzF-h1-J6a" secondAttribute="trailing" constant="60" id="Pli-MV-kf3"/>
+                            <constraint firstItem="Pw8-80-tvq" firstAttribute="leading" secondItem="h4c-95-OOe" secondAttribute="leading" constant="16" id="TeR-6n-5g3"/>
+                            <constraint firstItem="h4c-95-OOe" firstAttribute="trailing" secondItem="fZg-i4-sgs" secondAttribute="trailing" constant="106" id="Tmh-YY-4ou"/>
+                            <constraint firstItem="zjZ-sW-7EN" firstAttribute="top" secondItem="Pw8-80-tvq" secondAttribute="bottom" constant="60" id="VyO-eJ-s5Z"/>
+                            <constraint firstItem="KzF-h1-J6a" firstAttribute="top" secondItem="h4c-95-OOe" secondAttribute="top" constant="50" id="XO0-OY-xEu"/>
+                            <constraint firstItem="h4c-95-OOe" firstAttribute="trailing" secondItem="Pw8-80-tvq" secondAttribute="trailing" constant="16" id="Y4x-E0-HvL"/>
+                            <constraint firstItem="vXR-f0-K94" firstAttribute="bottom" secondItem="h4c-95-OOe" secondAttribute="bottom" id="hzo-n2-9km"/>
+                            <constraint firstItem="Pw8-80-tvq" firstAttribute="top" secondItem="KzF-h1-J6a" secondAttribute="bottom" constant="30" id="mrP-Jp-i2O"/>
+                            <constraint firstItem="fZg-i4-sgs" firstAttribute="leading" secondItem="h4c-95-OOe" secondAttribute="leading" constant="106" id="ob9-F0-sgv"/>
+                            <constraint firstItem="fZg-i4-sgs" firstAttribute="top" secondItem="zjZ-sW-7EN" secondAttribute="bottom" constant="75" id="rIo-T7-2l1"/>
+                            <constraint firstItem="vXR-f0-K94" firstAttribute="leading" secondItem="h4c-95-OOe" secondAttribute="leading" id="sQP-6n-xaQ"/>
+                            <constraint firstItem="h4c-95-OOe" firstAttribute="trailing" secondItem="zjZ-sW-7EN" secondAttribute="trailing" constant="71" id="wMQ-bo-J1r"/>
+                            <constraint firstItem="zjZ-sW-7EN" firstAttribute="leading" secondItem="h4c-95-OOe" secondAttribute="leading" constant="71" id="ztL-0X-ai8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="h4c-95-OOe"/>
                     </view>
                     <navigationItem key="navigationItem" id="Hmr-lX-Ucw"/>
@@ -201,6 +224,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="690" height="1227"/>
         <image name="next_slide" width="419" height="419"/>
         <image name="prev_slide" width="419" height="419"/>
     </resources>

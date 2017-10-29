@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C243B941FA5AD340010425E /* ProjectionOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C243B921FA5AD340010425E /* ProjectionOverlayViewController.xib */; };
+		3C243B951FA5AD340010425E /* ProjectionOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C243B931FA5AD340010425E /* ProjectionOverlayViewController.m */; };
+		3C243B981FA5AD570010425E /* RedDotController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C243B971FA5AD570010425E /* RedDotController.m */; };
+		3C243B9E1FA5B5660010425E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C243B9D1FA5B5600010425E /* IOKit.framework */; };
+		3C243BA01FA5B5820010425E /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C243B9F1FA5B57D0010425E /* ApplicationServices.framework */; };
+		3C243BA61FA609720010425E /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3C243BA51FA609720010425E /* Icon.icns */; };
+		3C243BA81FA60A760010425E /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C243BA71FA60A760010425E /* image.png */; };
+		3C243BAB1FA60C0E0010425E /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C243BAA1FA60C0E0010425E /* MainWindowController.m */; };
 		3C2E7F6A1FA553B3006B1B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E7F691FA553B3006B1B97 /* AppDelegate.swift */; };
 		3C2E7F6C1FA553B3006B1B97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E7F6B1FA553B3006B1B97 /* ViewController.swift */; };
 		3C2E7F6E1FA553B3006B1B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2E7F6D1FA553B3006B1B97 /* Assets.xcassets */; };
@@ -20,6 +28,18 @@
 
 /* Begin PBXFileReference section */
 		27F3AFD7DE285C997D73A3CF /* Pods-rClickrmacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rClickrmacOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-rClickrmacOS/Pods-rClickrmacOS.release.xcconfig"; sourceTree = "<group>"; };
+		3C243B911FA5AD340010425E /* ProjectionOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectionOverlayViewController.h; sourceTree = "<group>"; };
+		3C243B921FA5AD340010425E /* ProjectionOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectionOverlayViewController.xib; sourceTree = "<group>"; };
+		3C243B931FA5AD340010425E /* ProjectionOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectionOverlayViewController.m; sourceTree = "<group>"; };
+		3C243B961FA5AD570010425E /* RedDotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedDotController.h; sourceTree = "<group>"; };
+		3C243B971FA5AD570010425E /* RedDotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedDotController.m; sourceTree = "<group>"; };
+		3C243B991FA5ADBC0010425E /* rClickermacOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rClickermacOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		3C243B9D1FA5B5600010425E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		3C243B9F1FA5B57D0010425E /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		3C243BA51FA609720010425E /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		3C243BA71FA60A760010425E /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		3C243BA91FA60C0E0010425E /* MainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		3C243BAA1FA60C0E0010425E /* MainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		3C2E7F661FA553B3006B1B97 /* rClickrmacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rClickrmacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2E7F691FA553B3006B1B97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C2E7F6B1FA553B3006B1B97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C243BA01FA5B5820010425E /* ApplicationServices.framework in Frameworks */,
+				3C243B9E1FA5B5660010425E /* IOKit.framework in Frameworks */,
 				ED5F3DA17330CAE6BD97B69F /* Pods_rClickrmacOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +81,8 @@
 		3B8BE1EA2C43F0B46CAD9289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C243B9F1FA5B57D0010425E /* ApplicationServices.framework */,
+				3C243B9D1FA5B5600010425E /* IOKit.framework */,
 				BC1D9D7EFBAABFA8FDA5C1A5 /* Pods_rClickrmacOS.framework */,
 			);
 			name = Frameworks;
@@ -85,14 +109,24 @@
 		3C2E7F681FA553B3006B1B97 /* rClickrmacOS */ = {
 			isa = PBXGroup;
 			children = (
+				3C243BA71FA60A760010425E /* image.png */,
+				3C243BA51FA609720010425E /* Icon.icns */,
+				3C243B991FA5ADBC0010425E /* rClickermacOS-Bridging-Header.h */,
+				3C243B961FA5AD570010425E /* RedDotController.h */,
+				3C243B971FA5AD570010425E /* RedDotController.m */,
+				3C243B911FA5AD340010425E /* ProjectionOverlayViewController.h */,
+				3C243B931FA5AD340010425E /* ProjectionOverlayViewController.m */,
+				3C243B921FA5AD340010425E /* ProjectionOverlayViewController.xib */,
 				3C2E7F991FA55472006B1B97 /* GoogleService-Info.plist */,
 				3C2E7F691FA553B3006B1B97 /* AppDelegate.swift */,
 				3C2E7F6B1FA553B3006B1B97 /* ViewController.swift */,
+				3C243BA91FA60C0E0010425E /* MainWindowController.h */,
+				3C243BAA1FA60C0E0010425E /* MainWindowController.m */,
+				3C5D05B71FA58A6700601978 /* DotProjectionWindowController.swift */,
 				3C5D05B91FA58B1A00601978 /* DotProjectionViewController.swift */,
 				3CA5869F1FA56DE5002C67BD /* NSImageExtensions.swift */,
 				3C2E7F6D1FA553B3006B1B97 /* Assets.xcassets */,
 				3C2E7F6F1FA553B3006B1B97 /* Main.storyboard */,
-				3C5D05B71FA58A6700601978 /* DotProjectionWindowController.swift */,
 				3C2E7F721FA553B3006B1B97 /* Info.plist */,
 				3C2E7F731FA553B3006B1B97 /* rClickrmacOS.entitlements */,
 			);
@@ -135,6 +169,11 @@
 					3C2E7F651FA553B3006B1B97 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -163,7 +202,10 @@
 			files = (
 				3C2E7F6E1FA553B3006B1B97 /* Assets.xcassets in Resources */,
 				3C2E7F711FA553B3006B1B97 /* Main.storyboard in Resources */,
+				3C243BA61FA609720010425E /* Icon.icns in Resources */,
+				3C243B941FA5AD340010425E /* ProjectionOverlayViewController.xib in Resources */,
 				3C2E7F9A1FA55472006B1B97 /* GoogleService-Info.plist in Resources */,
+				3C243BA81FA60A760010425E /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +276,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C243B981FA5AD570010425E /* RedDotController.m in Sources */,
+				3C243B951FA5AD340010425E /* ProjectionOverlayViewController.m in Sources */,
+				3C243BAB1FA60C0E0010425E /* MainWindowController.m in Sources */,
 				3C2E7F6C1FA553B3006B1B97 /* ViewController.swift in Sources */,
 				3CA586A01FA56DE6002C67BD /* NSImageExtensions.swift in Sources */,
 				3C5D05B81FA58A6700601978 /* DotProjectionWindowController.swift in Sources */,
@@ -367,7 +412,6 @@
 			baseConfigurationReference = 5001ED564FB5E6619234071C /* Pods-rClickrmacOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = rClickrmacOS/rClickrmacOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 54362BT7G2;
@@ -375,6 +419,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocappathon.rClickrmacOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/numeric/Repos/rClickr/rClickrmacOS/rClickrmacOS/rClickermacOS-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -384,7 +430,6 @@
 			baseConfigurationReference = 27F3AFD7DE285C997D73A3CF /* Pods-rClickrmacOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = rClickrmacOS/rClickrmacOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 54362BT7G2;
@@ -392,6 +437,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocappathon.rClickrmacOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/numeric/Repos/rClickr/rClickrmacOS/rClickrmacOS/rClickermacOS-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
