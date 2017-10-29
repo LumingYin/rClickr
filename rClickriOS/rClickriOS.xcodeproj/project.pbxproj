@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D79DD11FA586D800216BE6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D79DD01FA586D800216BE6 /* Icon.png */; };
 		1926B26E1FA567B900C77159 /* RoomNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926B26D1FA567B900C77159 /* RoomNumberViewController.swift */; };
 		3C2E7F861FA553C0006B1B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E7F851FA553C0006B1B97 /* AppDelegate.swift */; };
 		3C2E7F881FA553C0006B1B97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E7F871FA553C0006B1B97 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18D79DD01FA586D800216BE6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Assets.xcassets/AppIcon.appiconset/Icon.png; sourceTree = "<group>"; };
 		1926B26D1FA567B900C77159 /* RoomNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomNumberViewController.swift; sourceTree = "<group>"; };
 		3071E89B25AE00DD0EC41D4C /* Pods-rClickriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rClickriOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-rClickriOS/Pods-rClickriOS.release.xcconfig"; sourceTree = "<group>"; };
 		3C2E7F821FA553C0006B1B97 /* rClickriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rClickriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 		3C2E7F841FA553C0006B1B97 /* rClickriOS */ = {
 			isa = PBXGroup;
 			children = (
+				18D79DD01FA586D800216BE6 /* Icon.png */,
 				3C2E7F971FA5543D006B1B97 /* GoogleService-Info.plist */,
 				3C2E7F851FA553C0006B1B97 /* AppDelegate.swift */,
 				3C2E7F871FA553C0006B1B97 /* ViewController.swift */,
@@ -158,6 +161,7 @@
 			files = (
 				3C2E7F901FA553C1006B1B97 /* LaunchScreen.storyboard in Resources */,
 				3C2E7F981FA5543D006B1B97 /* GoogleService-Info.plist in Resources */,
+				18D79DD11FA586D800216BE6 /* Icon.png in Resources */,
 				3C2E7F8D1FA553C1006B1B97 /* Assets.xcassets in Resources */,
 				3C2E7F8B1FA553C0006B1B97 /* Main.storyboard in Resources */,
 			);
@@ -369,9 +373,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5EFD380F234AE0EFB270E933 /* Pods-rClickriOS.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FY7422QAK2;
+				DEVELOPMENT_TEAM = Q24729YL82;
 				INFOPLIST_FILE = rClickriOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -386,9 +389,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3071E89B25AE00DD0EC41D4C /* Pods-rClickriOS.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FY7422QAK2;
+				DEVELOPMENT_TEAM = Q24729YL82;
 				INFOPLIST_FILE = rClickriOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

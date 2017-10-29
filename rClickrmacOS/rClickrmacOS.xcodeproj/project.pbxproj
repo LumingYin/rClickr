@@ -12,6 +12,7 @@
 		3C2E7F6E1FA553B3006B1B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2E7F6D1FA553B3006B1B97 /* Assets.xcassets */; };
 		3C2E7F711FA553B3006B1B97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2E7F6F1FA553B3006B1B97 /* Main.storyboard */; };
 		3C2E7F9A1FA55472006B1B97 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C2E7F991FA55472006B1B97 /* GoogleService-Info.plist */; };
+		3CA586A01FA56DE6002C67BD /* NSImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA5869F1FA56DE5002C67BD /* NSImageExtensions.swift */; };
 		ED5F3DA17330CAE6BD97B69F /* Pods_rClickrmacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1D9D7EFBAABFA8FDA5C1A5 /* Pods_rClickrmacOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		3C2E7F721FA553B3006B1B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2E7F731FA553B3006B1B97 /* rClickrmacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rClickrmacOS.entitlements; sourceTree = "<group>"; };
 		3C2E7F991FA55472006B1B97 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3CA5869F1FA56DE5002C67BD /* NSImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSImageExtensions.swift; sourceTree = "<group>"; };
 		5001ED564FB5E6619234071C /* Pods-rClickrmacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rClickrmacOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rClickrmacOS/Pods-rClickrmacOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BC1D9D7EFBAABFA8FDA5C1A5 /* Pods_rClickrmacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rClickrmacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				3C2E7F991FA55472006B1B97 /* GoogleService-Info.plist */,
 				3C2E7F691FA553B3006B1B97 /* AppDelegate.swift */,
 				3C2E7F6B1FA553B3006B1B97 /* ViewController.swift */,
+				3CA5869F1FA56DE5002C67BD /* NSImageExtensions.swift */,
 				3C2E7F6D1FA553B3006B1B97 /* Assets.xcassets */,
 				3C2E7F6F1FA553B3006B1B97 /* Main.storyboard */,
 				3C2E7F721FA553B3006B1B97 /* Info.plist */,
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C2E7F6C1FA553B3006B1B97 /* ViewController.swift in Sources */,
+				3CA586A01FA56DE6002C67BD /* NSImageExtensions.swift in Sources */,
 				3C2E7F6A1FA553B3006B1B97 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
