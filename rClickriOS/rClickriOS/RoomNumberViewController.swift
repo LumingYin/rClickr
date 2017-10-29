@@ -19,7 +19,7 @@ class RoomNumberViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround() 
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
         let lineColor = UIColor(red:0.12, green:0.23, blue:0.35, alpha:1.0)
@@ -85,5 +85,17 @@ extension UITextField {
         
         borderLine.backgroundColor = borderColor
         self.addSubview(borderLine)
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

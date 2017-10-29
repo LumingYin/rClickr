@@ -25,6 +25,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="UiW-gr-fRX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9s-PE-kfv">
                                 <rect key="frame" x="68" y="441" width="83" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -62,14 +66,16 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uK-R9-NoA">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="66.5"/>
-                                                <state key="normal" title="pointer"/>
+                                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="19"/>
+                                                <state key="normal" title="Pointer"/>
                                                 <connections>
                                                     <action selector="pointerBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z0i-of-Szh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPJ-bg-V8E">
                                                 <rect key="frame" x="94" y="0.0" width="93.5" height="66.5"/>
-                                                <state key="normal" title="play/pause"/>
+                                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="19"/>
+                                                <state key="normal" title="Play/Pause"/>
                                                 <connections>
                                                     <action selector="playPauseBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0e-Q7-aig"/>
                                                 </connections>
@@ -78,8 +84,8 @@
                                                 <rect key="frame" x="187.5" y="0.0" width="94" height="66.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0A-aG-X3b">
-                                                        <rect key="frame" x="21" y="24" width="51" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <rect key="frame" x="12.5" y="20.5" width="68" height="27"/>
+                                                        <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="19"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -92,7 +98,8 @@
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tw-2I-Ilj">
                                                 <rect key="frame" x="281.5" y="0.0" width="93.5" height="66.5"/>
-                                                <state key="normal" title="blank"/>
+                                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="19"/>
+                                                <state key="normal" title="Blank"/>
                                                 <connections>
                                                     <action selector="blankBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="23g-rw-GF1"/>
                                                 </connections>
@@ -129,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5999999999999" y="-172.26386806596702"/>
+            <point key="canvasLocation" x="1535.2" y="120.98950524737631"/>
         </scene>
         <!--Room Number View Controller-->
         <scene sceneID="i3Y-C3-bI4">
@@ -157,7 +164,7 @@
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                 <connections>
                                     <outlet property="delegate" destination="Z0a-Ng-Jfj" id="CWx-l7-vKI"/>
                                 </connections>
