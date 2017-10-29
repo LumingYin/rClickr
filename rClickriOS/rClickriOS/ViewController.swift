@@ -27,11 +27,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func prevSlide(_ sender: UIButton) {
-        self.ref.child("2163").childByAutoId().setValue(["timestamp" : Date.init().description, "action": "keydown", "completed": "false"])
+        self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "keydown", "completed": "false"])
     }
     
     @IBAction func nextSlide(_ sender: UIButton) {
-        self.ref.child("2163").childByAutoId().setValue(["timestamp" : Date.init().description, "action": "keyup", "completed": "false"])
+        self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "keyup", "completed": "false"])
     }
 
     

@@ -14,13 +14,19 @@ class RoomNumberViewController: UIViewController, UITextFieldDelegate{
     
     var ref: DatabaseReference!
     @IBOutlet weak var roomNumberTextField: UITextField!
-    
+    var roomNumber: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ViewController {
+            destination.currentRoomNumber = roomNumber!
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +52,9 @@ class RoomNumberViewController: UIViewController, UITextFieldDelegate{
             print(ref.child("\(roomNumberTextField.text)"))
             ref.child("\(roomNumberTextField.text!)").observeSingleEvent(of: .value, with: { (snapshot) in
                 if snapshot.exists() {
+                    self.roomNumber = self.roomNumberTextField.text!
                     self.performSegue(withIdentifier: "toSlideBtns", sender: self)
+                    
                 } else {
                     self.presentWrongInputAlert(message: "Your room number does not exist.")
                 }
