@@ -11,6 +11,12 @@ import FirebaseCommunity
 import Carbon.HIToolbox
 
 
+//class MainWindow: NSWindow {
+//    override func awakeFromNib() {
+//
+//    }
+//}
+
 class ViewController: NSViewController {
     var ref: DatabaseReference!
     var currentRoomNumber: String = "0000"
@@ -73,9 +79,18 @@ class ViewController: NSViewController {
         currentRoomNumberIndicator.stringValue = currentRoomNumber.inserting(separator: " ", every: 1)
 //        currentRoomNumber = "2163"
     }
+    
+    override func viewDidAppear() {
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.titleVisibility = .hidden
+        self.view.window?.styleMask.insert(.fullSizeContentView)
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         
         FirebaseApp.configure()
         generateRoomNumber()
