@@ -1,0 +1,33 @@
+PODS:
+  - FirebaseCommunity (0.1.4):
+    - FirebaseCommunity/Root (= 0.1.4)
+  - FirebaseCommunity/Core (0.1.4):
+    - FirebaseCommunity/Root
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCommunity/Database (0.1.4):
+    - FirebaseCommunity/Core
+    - leveldb-library
+  - FirebaseCommunity/Root (0.1.4)
+  - FirebaseCommunity/Storage (0.1.4):
+    - FirebaseCommunity/Core
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GTMSessionFetcher/Core (1.1.12)
+  - leveldb-library (1.18.3)
+
+DEPENDENCIES:
+  - FirebaseCommunity
+  - FirebaseCommunity/Database
+  - FirebaseCommunity/Storage
+
+SPEC CHECKSUMS:
+  FirebaseCommunity: 158175f2781bd436b75a55d379e0ea61c3feee7d
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
+  leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
+
+PODFILE CHECKSUM: 3a2aa70910580f82d8860f2f3ed94190f1e06867
+
+COCOAPODS: 1.3.1

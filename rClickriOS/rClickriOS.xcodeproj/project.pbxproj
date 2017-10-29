@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C2E7F861FA553C0006B1B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E7F851FA553C0006B1B97 /* AppDelegate.swift */; };
+		3C2E7F881FA553C0006B1B97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E7F871FA553C0006B1B97 /* ViewController.swift */; };
+		3C2E7F8B1FA553C0006B1B97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2E7F891FA553C0006B1B97 /* Main.storyboard */; };
+		3C2E7F8D1FA553C1006B1B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2E7F8C1FA553C1006B1B97 /* Assets.xcassets */; };
+		3C2E7F901FA553C1006B1B97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2E7F8E1FA553C1006B1B97 /* LaunchScreen.storyboard */; };
+		3C2E7F981FA5543D006B1B97 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C2E7F971FA5543D006B1B97 /* GoogleService-Info.plist */; };
+		753332B042EC5B20CBDC1D3E /* Pods_rClickriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A67FF4D92217FF6864D0857 /* Pods_rClickriOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3071E89B25AE00DD0EC41D4C /* Pods-rClickriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rClickriOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-rClickriOS/Pods-rClickriOS.release.xcconfig"; sourceTree = "<group>"; };
+		3C2E7F821FA553C0006B1B97 /* rClickriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rClickriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C2E7F851FA553C0006B1B97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3C2E7F871FA553C0006B1B97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3C2E7F8A1FA553C0006B1B97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3C2E7F8C1FA553C1006B1B97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C2E7F8F1FA553C1006B1B97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3C2E7F911FA553C1006B1B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C2E7F971FA5543D006B1B97 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A67FF4D92217FF6864D0857 /* Pods_rClickriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rClickriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EFD380F234AE0EFB270E933 /* Pods-rClickriOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rClickriOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rClickriOS/Pods-rClickriOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C2E7F7F1FA553C0006B1B97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				753332B042EC5B20CBDC1D3E /* Pods_rClickriOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10F6E309404003830865D0D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EFD380F234AE0EFB270E933 /* Pods-rClickriOS.debug.xcconfig */,
+				3071E89B25AE00DD0EC41D4C /* Pods-rClickriOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		22DBE65723029E85059D57A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A67FF4D92217FF6864D0857 /* Pods_rClickriOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C2E7F791FA553C0006B1B97 = {
+			isa = PBXGroup;
+			children = (
+				3C2E7F841FA553C0006B1B97 /* rClickriOS */,
+				3C2E7F831FA553C0006B1B97 /* Products */,
+				10F6E309404003830865D0D9 /* Pods */,
+				22DBE65723029E85059D57A8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3C2E7F831FA553C0006B1B97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C2E7F821FA553C0006B1B97 /* rClickriOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C2E7F841FA553C0006B1B97 /* rClickriOS */ = {
+			isa = PBXGroup;
+			children = (
+				3C2E7F971FA5543D006B1B97 /* GoogleService-Info.plist */,
+				3C2E7F851FA553C0006B1B97 /* AppDelegate.swift */,
+				3C2E7F871FA553C0006B1B97 /* ViewController.swift */,
+				3C2E7F891FA553C0006B1B97 /* Main.storyboard */,
+				3C2E7F8C1FA553C1006B1B97 /* Assets.xcassets */,
+				3C2E7F8E1FA553C1006B1B97 /* LaunchScreen.storyboard */,
+				3C2E7F911FA553C1006B1B97 /* Info.plist */,
+			);
+			path = rClickriOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C2E7F811FA553C0006B1B97 /* rClickriOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C2E7F941FA553C1006B1B97 /* Build configuration list for PBXNativeTarget "rClickriOS" */;
+			buildPhases = (
+				E4D89C9C00963F6DCBCAF62B /* [CP] Check Pods Manifest.lock */,
+				3C2E7F7E1FA553C0006B1B97 /* Sources */,
+				3C2E7F7F1FA553C0006B1B97 /* Frameworks */,
+				3C2E7F801FA553C0006B1B97 /* Resources */,
+				1FFFBE2F030F49E58E8DF517 /* [CP] Embed Pods Frameworks */,
+				D9A2A141F44AE8CA09BAED24 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rClickriOS;
+			productName = rClickriOS;
+			productReference = 3C2E7F821FA553C0006B1B97 /* rClickriOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C2E7F7A1FA553C0006B1B97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = cocappathon;
+				TargetAttributes = {
+					3C2E7F811FA553C0006B1B97 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3C2E7F7D1FA553C0006B1B97 /* Build configuration list for PBXProject "rClickriOS" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3C2E7F791FA553C0006B1B97;
+			productRefGroup = 3C2E7F831FA553C0006B1B97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C2E7F811FA553C0006B1B97 /* rClickriOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C2E7F801FA553C0006B1B97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C2E7F901FA553C1006B1B97 /* LaunchScreen.storyboard in Resources */,
+				3C2E7F981FA5543D006B1B97 /* GoogleService-Info.plist in Resources */,
+				3C2E7F8D1FA553C1006B1B97 /* Assets.xcassets in Resources */,
+				3C2E7F8B1FA553C0006B1B97 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FFFBE2F030F49E58E8DF517 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-rClickriOS/Pods-rClickriOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCommunity/FirebaseCommunity.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCommunity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rClickriOS/Pods-rClickriOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9A2A141F44AE8CA09BAED24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rClickriOS/Pods-rClickriOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4D89C9C00963F6DCBCAF62B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rClickriOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C2E7F7E1FA553C0006B1B97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C2E7F881FA553C0006B1B97 /* ViewController.swift in Sources */,
+				3C2E7F861FA553C0006B1B97 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3C2E7F891FA553C0006B1B97 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C2E7F8A1FA553C0006B1B97 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3C2E7F8E1FA553C1006B1B97 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C2E7F8F1FA553C1006B1B97 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3C2E7F921FA553C1006B1B97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3C2E7F931FA553C1006B1B97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C2E7F951FA553C1006B1B97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EFD380F234AE0EFB270E933 /* Pods-rClickriOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54362BT7G2;
+				INFOPLIST_FILE = rClickriOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocappathon.rClickriOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3C2E7F961FA553C1006B1B97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3071E89B25AE00DD0EC41D4C /* Pods-rClickriOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54362BT7G2;
+				INFOPLIST_FILE = rClickriOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocappathon.rClickriOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C2E7F7D1FA553C0006B1B97 /* Build configuration list for PBXProject "rClickriOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C2E7F921FA553C1006B1B97 /* Debug */,
+				3C2E7F931FA553C1006B1B97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C2E7F941FA553C1006B1B97 /* Build configuration list for PBXNativeTarget "rClickriOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C2E7F951FA553C1006B1B97 /* Debug */,
+				3C2E7F961FA553C1006B1B97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C2E7F7A1FA553C0006B1B97 /* Project object */;
+}

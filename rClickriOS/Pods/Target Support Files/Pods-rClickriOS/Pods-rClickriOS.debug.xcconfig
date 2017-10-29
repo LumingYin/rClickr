@@ -1,0 +1,13 @@
+CC = clang
+CXX = clang++
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/FirebaseCommunity" "$PODS_CONFIGURATION_BUILD_DIR/GTMSessionFetcher" "$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac" "$PODS_CONFIGURATION_BUILD_DIR/leveldb-library"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/leveldb-library/" "${PODS_ROOT}/leveldb-library/include"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = -DFIRDatabase_VERSION=0.1.4 -DFIRStorage_VERSION=0.1.4 $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/FirebaseCommunity/FirebaseCommunity.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/GTMSessionFetcher/GTMSessionFetcher.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/leveldb-library/leveldb.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -l"c++" -framework "FirebaseCommunity" -framework "GTMSessionFetcher" -framework "GoogleToolboxForMac" -framework "leveldb"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+WARNING_CFLAGS = -Wno-shorten-64-to-32
