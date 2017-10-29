@@ -13,11 +13,15 @@ import FirebaseCommunity
 
 class ViewController: UIViewController {
     
+
+    var ref: DatabaseReference!
+    var currentRoomNumber: String = "0000"
     
-    var ref = Database.database().reference()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         // Do any additional setup after loading the view, typically from a nib.
         
         

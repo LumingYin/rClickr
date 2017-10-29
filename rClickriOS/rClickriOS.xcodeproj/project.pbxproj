@@ -367,7 +367,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = FY7422QAK2;
+=======
+				DEVELOPMENT_TEAM = Q24729YL82;
+>>>>>>> f122146f18813f8681e6575ff76759d269404dcf
 				INFOPLIST_FILE = rClickriOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -384,7 +388,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = FY7422QAK2;
+=======
+				DEVELOPMENT_TEAM = Q24729YL82;
+>>>>>>> f122146f18813f8681e6575ff76759d269404dcf
 				INFOPLIST_FILE = rClickriOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
