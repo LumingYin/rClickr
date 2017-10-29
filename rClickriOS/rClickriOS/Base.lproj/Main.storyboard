@@ -86,8 +86,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zjZ-sW-7EN">
                                 <rect key="frame" x="71" y="318" width="233" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Z0a-Ng-Jfj" id="Tth-tR-eUh"/>
@@ -143,6 +144,7 @@
         <image name="prev_slide" width="419" height="419"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="fKY-8h-s3J"/>
         <segue reference="EtL-6i-a5s"/>
     </inferredMetricsTieBreakers>
 </document>
