@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="1678" y="-553"/>
         </scene>
-        <!--View Controller-->
+        <!--Room Number View Controller-->
         <scene sceneID="i3Y-C3-bI4">
             <objects>
-                <viewController id="Z0a-Ng-Jfj" sceneMemberID="viewController">
+                <viewController id="Z0a-Ng-Jfj" customClass="RoomNumberViewController" customModule="rClickriOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kla-Fb-x64">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                                     <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="p8x-re-ccG"/>
+                                    <action selector="startSlidingBtnPressed:" destination="Z0a-Ng-Jfj" eventType="touchUpInside" id="ply-zS-JdU"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zjZ-sW-7EN">
@@ -89,6 +89,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Z0a-Ng-Jfj" id="Tth-tR-eUh"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please type in your room number below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw8-80-tvq">
                                 <rect key="frame" x="46" y="190" width="313" height="21"/>
@@ -109,6 +112,10 @@
                         <viewLayoutGuide key="safeArea" id="h4c-95-OOe"/>
                     </view>
                     <navigationItem key="navigationItem" id="Hmr-lX-Ucw"/>
+                    <connections>
+                        <outlet property="roomNumberTextField" destination="zjZ-sW-7EN" id="bBa-dT-uIj"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toSlideBtns" id="fKY-8h-s3J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdj-3F-R94" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

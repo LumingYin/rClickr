@@ -12,12 +12,11 @@ import FirebaseCommunity
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
+    
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         FirebaseApp.configure()
-
         // Insert code here to initialize your application
     }
 
