@@ -76,6 +76,10 @@ class RoomNumberViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.roomNumberTextField.text = ""
+        self.circleView.text = "○   ○   ○   ○"
+    }
     
     
     @IBAction func startSlidingBtnPressed(_ sender: Any) {

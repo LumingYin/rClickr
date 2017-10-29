@@ -36,7 +36,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             audioEngine.inputNode.removeTap(onBus: 0)
             audioEnabled = false
         }
-        
     }
     
     override func viewDidLoad() {
@@ -78,6 +77,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
     }
     
+
     override func viewDidAppear(_ animated: Bool) {
         speechRecognizer.delegate = self
         
