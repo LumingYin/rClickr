@@ -704,9 +704,8 @@
         <!--Window Controller-->
         <scene sceneID="t6T-Wm-RqF">
             <objects>
-                <windowController id="4JZ-B7-OLT" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Wba-rR-yR7">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                <windowController storyboardIdentifier="DotProjectionWindow" id="4JZ-B7-OLT" customClass="DotProjectionWindowController" customModule="rClickrmacOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="DotProjectionWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="Wba-rR-yR7">
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
@@ -722,13 +721,25 @@
             </objects>
             <point key="canvasLocation" x="644" y="402"/>
         </scene>
-        <!--View Controller-->
+        <!--Dot Projection View Controller-->
         <scene sceneID="gO8-E4-0yg">
             <objects>
-                <viewController id="bkQ-Eh-R8r" sceneMemberID="viewController">
+                <viewController id="bkQ-Eh-R8r" customClass="DotProjectionViewController" customModule="rClickrmacOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Tqk-iz-QTV">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnO-Uu-jX5">
+                                <rect key="frame" x="-2" y="0.0" width="484" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="SXp-Hg-3Al">
+                                    <font key="font" metaFont="system"/>
+                                    <mutableString key="title">Multiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline Label</mutableString>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
                     </view>
                 </viewController>
                 <customObject id="eaE-Gy-Qmh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

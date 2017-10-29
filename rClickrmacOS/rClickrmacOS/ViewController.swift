@@ -94,6 +94,14 @@ class ViewController: NSViewController {
             }
         })
     }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        if let fullScreenWindow = NSStoryboard.init(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "DotProjectionWindow")) as? DotProjectionWindowController {
+            fullScreenWindow.showWindow(nil)
+        }
+    }
 
     override var representedObject: Any? {
         didSet {
