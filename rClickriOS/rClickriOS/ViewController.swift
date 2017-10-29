@@ -35,8 +35,10 @@ class ViewController: UIViewController {
                                 print("something went wrong with image")
                             } else {
                                 DispatchQueue.main.async {
-                                    self.snapshotImageView.image = UIImage(data: data!)
-                                    print(self.snapshotImageView.image?.size)
+                                    if let uiimage = UIImage(data: data) as? UIImage {
+                                        self.snapshotImageView.image = UIImage(data: data!)
+                                        print(self.snapshotImageView.image?.size)
+                                    }
                                 }
                             }
                             
