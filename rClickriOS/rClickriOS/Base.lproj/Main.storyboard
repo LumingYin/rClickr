@@ -60,7 +60,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iL8-aY-Rno">
                                                 <rect key="frame" x="165.66666666666666" y="0.0" width="82.666666666666657" height="73.666666666666671"/>
-                                                <state key="normal" image="micIconBtn"/>
+                                                <state key="normal" image="disabledMicBtn"/>
                                                 <connections>
                                                     <action selector="toggleMicInputPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xon-nK-c1y"/>
                                                 </connections>
@@ -153,6 +153,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="microphoneButton" destination="iL8-aY-Rno" id="nIx-5A-GQ9"/>
                         <outlet property="snapshotImageView" destination="5NK-al-L3i" id="NnA-Ee-0He"/>
                         <outlet property="volumeView" destination="DGk-YI-3nq" id="sN9-xm-tcv"/>
                     </connections>
@@ -258,8 +259,8 @@
         <image name="blackoutBtn" width="187" height="160"/>
         <image name="btnPlayPause" width="186" height="160"/>
         <image name="btnreddot" width="187" height="160"/>
+        <image name="disabledMicBtn" width="187" height="160"/>
         <image name="image" width="512" height="634"/>
-        <image name="micIconBtn" width="187" height="160"/>
         <image name="nextSlideBtn" width="327" height="327"/>
         <image name="prevSlideBtn" width="327" height="327"/>
         <image name="volSliderBtn" width="187" height="160"/>

@@ -18,6 +18,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     var actionEnabled: String!
     var audioEnabled = false
     
+    @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var snapshotImageView: UIImageView!
  
@@ -31,10 +32,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         if !audioEnabled {
             try? startRecording()
             audioEnabled = true
+            microphoneButton.setImage(UIImage.init(named: "micIconBtn"), for: .normal)
+            microphoneButton.setNeedsDisplay()
         } else {
             audioEngine.stop()
             audioEngine.inputNode.removeTap(onBus: 0)
             audioEnabled = false
+            microphoneButton.setImage(UIImage.init(named: "disabledMicBtn"), for: .normal)
+            microphoneButton.setNeedsDisplay()
         }
     }
     
