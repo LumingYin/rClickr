@@ -22,6 +22,8 @@ class RoomNumberViewController: UIViewController, UITextFieldDelegate {
 
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
+        let lineColor = UIColor(red:0.12, green:0.23, blue:0.35, alpha:1.0)
+        self.roomNumberTextField.setBottomLine(borderColor: lineColor)
         
     }
     
@@ -68,4 +70,20 @@ class RoomNumberViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+}
+
+extension UITextField {
+    
+    func setBottomLine(borderColor: UIColor) {
+        
+        self.borderStyle = UITextBorderStyle.none
+        self.backgroundColor = UIColor.clear
+        
+        let borderLine = UIView()
+        let height = 1.0
+        borderLine.frame = CGRect(x: 0, y: Double(self.frame.height) - height, width: Double(self.frame.width), height: height)
+        
+        borderLine.backgroundColor = borderColor
+        self.addSubview(borderLine)
+    }
 }
