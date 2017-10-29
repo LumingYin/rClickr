@@ -48,10 +48,68 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5NK-al-L3i">
                                 <rect key="frame" x="0.0" y="64" width="375" height="222.5"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gL-bt-5uV">
+                                <rect key="frame" x="0.0" y="286.5" width="375" height="66.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Adi-sm-T4B">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uK-R9-NoA">
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="66.5"/>
+                                                <state key="normal" title="pointer"/>
+                                                <connections>
+                                                    <action selector="pointerBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z0i-of-Szh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPJ-bg-V8E">
+                                                <rect key="frame" x="94" y="0.0" width="93.5" height="66.5"/>
+                                                <state key="normal" title="play/pause"/>
+                                                <connections>
+                                                    <action selector="playPauseBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0e-Q7-aig"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGk-YI-3nq">
+                                                <rect key="frame" x="187.5" y="0.0" width="94" height="66.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0A-aG-X3b">
+                                                        <rect key="frame" x="21" y="24" width="51" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="Y0A-aG-X3b" firstAttribute="centerY" secondItem="DGk-YI-3nq" secondAttribute="centerY" id="PeZ-zI-amn"/>
+                                                    <constraint firstItem="Y0A-aG-X3b" firstAttribute="centerX" secondItem="DGk-YI-3nq" secondAttribute="centerX" id="eE7-or-WhW"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tw-2I-Ilj">
+                                                <rect key="frame" x="281.5" y="0.0" width="93.5" height="66.5"/>
+                                                <state key="normal" title="blank"/>
+                                                <connections>
+                                                    <action selector="blankBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="23g-rw-GF1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Adi-sm-T4B" secondAttribute="bottom" id="0WM-nz-ucV"/>
+                                    <constraint firstItem="Adi-sm-T4B" firstAttribute="leading" secondItem="5gL-bt-5uV" secondAttribute="leading" id="kx6-Pn-S7k"/>
+                                    <constraint firstAttribute="trailing" secondItem="Adi-sm-T4B" secondAttribute="trailing" id="lPq-1T-daG"/>
+                                    <constraint firstItem="Adi-sm-T4B" firstAttribute="top" secondItem="5gL-bt-5uV" secondAttribute="top" id="uze-ts-Seh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5NK-al-L3i" secondAttribute="trailing" id="K8i-lg-0ub"/>
+                            <constraint firstItem="5gL-bt-5uV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:10" id="OdL-fI-tHU"/>
+                            <constraint firstItem="5gL-bt-5uV" firstAttribute="top" secondItem="5NK-al-L3i" secondAttribute="bottom" id="S0c-sh-8gA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5gL-bt-5uV" secondAttribute="trailing" id="YHR-OH-mIY"/>
+                            <constraint firstItem="5gL-bt-5uV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YYc-tt-z3M"/>
                             <constraint firstItem="5NK-al-L3i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZNe-vv-Hsq"/>
                             <constraint firstItem="5NK-al-L3i" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:3" id="gc3-g4-c8S"/>
                             <constraint firstItem="5NK-al-L3i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vor-Td-7uS"/>
@@ -60,6 +118,7 @@
                     </view>
                     <connections>
                         <outlet property="snapshotImageView" destination="5NK-al-L3i" id="NnA-Ee-0He"/>
+                        <outlet property="volumeView" destination="DGk-YI-3nq" id="sN9-xm-tcv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

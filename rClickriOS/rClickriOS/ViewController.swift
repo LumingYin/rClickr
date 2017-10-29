@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var panGesture: UIPanGestureRecognizer!
     var actionEnabled: String!
     
+    @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var snapshotImageView: UIImageView!
     
     
@@ -23,6 +24,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         
+        var swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeUp))
+        swipeUp.direction = .up
+        volumeView.addGestureRecognizer(swipeUp)
+        
+        var swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeDown))
+        swipeDown.direction = .down
+        volumeView.addGestureRecognizer(swipeDown)
     actionEnabled = "None"
         ref.child(currentRoomNumber).child("interactive_settings").child("screenshot_url").observe(.value) { (snapshot) in
             if snapshot.exists() {
@@ -31,7 +39,7 @@ class ViewController: UIViewController {
                     if let snapshotURL = URL(string: snapshot.value as! String) {
                         URLSession.shared.dataTask(with: snapshotURL, completionHandler: { (data, response, error) in
                             
-                            if error != nil && data != nil {
+                            if error != nil && data == nil {
                                 print("something went wrong with image")
                             } else {
                                 DispatchQueue.main.async {
@@ -71,8 +79,7 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            if snapshotImageView.frame.contains(touch.location(in: self.view))  && actionEnabled == "None" {
-                actionEnabled = "pointer"
+            if snapshotImageView.frame.contains(touch.location(in: self.view))  && actionEnabled == "pointer" {
                 var x = touch.location(in: snapshotImageView).x / snapshotImageView.frame.width
                 var y = 1 - (touch.location(in: snapshotImageView).y / snapshotImageView.frame.height)
                 print("x:\(x), y:\(y)")
@@ -94,11 +101,38 @@ class ViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        actionEnabled = "None"
-        ref.child(currentRoomNumber).child("interactive_settings").child("highlight_coordinates").updateChildValues(["x" : -1, "y" : -1])
+        if actionEnabled == "pointer" {
+            ref.child(currentRoomNumber).child("interactive_settings").child("highlight_coordinates").updateChildValues(["x" : -1, "y" : -1])
+        }
+        
+    }
+    
+    @IBAction func pointerBtnPressed(_ sender: Any) {
+        if actionEnabled != "pointer" {
+            actionEnabled = "pointer"
+        } else {
+            actionEnabled = "None"
+        }
     }
     
     
+    @IBAction func playPauseBtnPressed(_ sender: Any) {
+        
+        self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "space", "completed": "false"])
+    }
+    
+    @IBAction func blankBtnPressed(_ sender: Any) {
+        self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "blank", "completed": "false"])
+    }
+    
+    
+    @objc func swipeUp() {
+        self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "volumeup", "completed": "false"])
+    }
+    
+    @objc func swipeDown() {
+        self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "volumedown", "completed": "false"])
+    }
     
 }
 
