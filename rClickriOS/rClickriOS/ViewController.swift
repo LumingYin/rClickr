@@ -9,11 +9,20 @@
 import UIKit
 import FirebaseCommunity
 
+
+
 class ViewController: UIViewController {
+    
+    
+    var ref = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,9 +31,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func prevSlide(_ sender: UIButton) {
+        self.ref.child("2163").childByAutoId().setValue(["timestamp" : Date.init().description, "action": "keydown", "completed": "false"])
     }
     
     @IBAction func nextSlide(_ sender: UIButton) {
+        self.ref.child("2163").childByAutoId().setValue(["timestamp" : Date.init().description, "action": "keyup", "completed": "false"])
     }
 
     
