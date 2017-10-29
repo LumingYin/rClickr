@@ -69,18 +69,30 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            if snapshotImageView.frame.contains(touch.location(in: self.view))  {
-                print(touch.location(in: snapshotImageView))
+            if snapshotImageView.frame.contains(touch.location(in: self.view))  && actionEnabled == "None" {
+                actionEnabled = "pointer"
+                var x = touch.location(in: snapshotImageView).x / snapshotImageView.frame.width
+                var y = 1 - (touch.location(in: snapshotImageView).y / snapshotImageView.frame.height)
+                print("x:\(x), y:\(y)")
+                ref.child(currentRoomNumber).child("interactive_settings").child("highlight_coordinates").updateChildValues(["x" : x, "y" : y])
             }
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            if snapshotImageView.frame.contains(touch.location(in: self.view))  {
-                print(touch.location(in: snapshotImageView))
+            
+            if snapshotImageView.frame.contains(touch.location(in: self.view)) &&  actionEnabled == "pointer" {
+                var x = touch.location(in: snapshotImageView).x / snapshotImageView.frame.width
+                var y = 1 - (touch.location(in: snapshotImageView).y / snapshotImageView.frame.height)
+                print("x:\(x), y:\(y)")
+                ref.child(currentRoomNumber).child("interactive_settings").child("highlight_coordinates").updateChildValues(["x" : x, "y" : y])
             }
         }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        actionEnabled = "None"
     }
     
     

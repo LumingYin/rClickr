@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseCommunity
 
-class RoomNumberViewController: UIViewController, UITextFieldDelegate{
+class RoomNumberViewController: UIViewController, UITextFieldDelegate {
 
     
     var ref: DatabaseReference!
