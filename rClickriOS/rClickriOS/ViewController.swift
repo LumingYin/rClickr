@@ -27,6 +27,17 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
+    @IBAction func toggleMicInputPressed(_ sender: Any) {
+        if !audioEnabled {
+            try? startRecording()
+            audioEnabled = true
+        } else {
+            audioEngine.stop()
+            audioEngine.inputNode.removeTap(onBus: 0)
+            audioEnabled = false
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

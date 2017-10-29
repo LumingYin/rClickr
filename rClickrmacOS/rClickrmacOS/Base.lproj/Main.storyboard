@@ -755,17 +755,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="302"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box fixedFrame="YES" boxType="custom" borderType="line" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="lXS-fM-yKB">
-                                <rect key="frame" x="-13" y="188" width="504" height="126"/>
+                            <box fixedFrame="YES" boxType="custom" borderType="line" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="5ck-U5-i64">
+                                <rect key="frame" x="-13" y="-28" width="504" height="209"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="0MK-Ii-ASG">
-                                    <rect key="frame" x="1" y="1" width="502" height="124"/>
+                                <view key="contentView" ambiguous="YES" id="OaW-PX-xIG">
+                                    <rect key="frame" x="1" y="1" width="502" height="207"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
+                                <color key="borderColor" white="0.0" alpha="0.1432983733" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" red="0.96710421954314718" green="0.96710421954314718" blue="0.96710421954314718" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </box>
+                            <box fixedFrame="YES" boxType="custom" borderType="line" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="lXS-fM-yKB">
+                                <rect key="frame" x="-13" y="171" width="504" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" ambiguous="YES" id="0MK-Ii-ASG">
+                                    <rect key="frame" x="1" y="1" width="502" height="141"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.1432983732876712" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0R-1R-KZ9">
-                                <rect key="frame" x="124" y="53" width="230" height="66"/>
+                                <rect key="frame" x="124" y="38" width="230" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="2 1 6 3" id="Lh3-eU-E5m">
                                     <font key="font" metaFont="system" size="55"/>
@@ -774,7 +785,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPH-qz-m4a">
-                                <rect key="frame" x="102" y="118" width="275" height="45"/>
+                                <rect key="frame" x="102" y="103" width="275" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Open the Remote Clickr app on your iOS device, then enter the following code:" id="0aY-tI-idJ">
                                     <font key="font" metaFont="system"/>
@@ -783,7 +794,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsp-Gv-Xma">
-                                <rect key="frame" x="105" y="214" width="309" height="60"/>
+                                <rect key="frame" x="105" y="199" width="309" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Remote Clickr" id="XIK-DZ-vhB">
                                     <font key="font" metaFont="systemBold" size="40"/>
@@ -792,12 +803,12 @@
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2k-dA-pLy">
-                                <rect key="frame" x="22" y="205" width="77" height="77"/>
+                                <rect key="frame" x="22" y="190" width="77" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="image" id="kQU-Oj-Kie"/>
                             </imageView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibn-Io-t9W">
-                                <rect key="frame" x="387" y="231" width="87" height="32"/>
+                                <rect key="frame" x="387" y="216" width="87" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Refresh" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Soa-Fh-Lr5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

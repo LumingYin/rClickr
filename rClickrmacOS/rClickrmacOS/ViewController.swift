@@ -74,7 +74,7 @@ class ViewController: NSViewController {
     }
     
     func generateRoomNumber() {
-        let result = Int(arc4random_uniform(9999))
+        let result = Int(arc4random_uniform(9000) + 1000)
         currentRoomNumber = "\(result)"
         currentRoomNumberIndicator.stringValue = currentRoomNumber.inserting(separator: " ", every: 1)
 //        currentRoomNumber = "2163"

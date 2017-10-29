@@ -58,7 +58,9 @@
     CGFloat hStart = mainScreenRect.size.height * y_coord;
     
     if (self.vc != nil) {
+        
         NSRect newFrame = CGRectMake(wStart, hStart, self.vc.redDotView.frame.size.width, self.vc.redDotView.frame.size.height);
+//        self.vc.redDotView.animator.frame = newFrame;
         self.vc.redDotView.frame = newFrame;
         [self.vc.redDotView setNeedsDisplay: YES];
     }
