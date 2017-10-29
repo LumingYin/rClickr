@@ -16,11 +16,13 @@ class RoomNumberViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var roomNumberTextField: UITextField!
     var roomNumber: String?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
