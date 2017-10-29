@@ -35,8 +35,8 @@ class ViewController: UIViewController {
                                 print("something went wrong with image")
                             } else {
                                 DispatchQueue.main.async {
-                                    if let uiimage = UIImage(data: data) as? UIImage {
-                                        self.snapshotImageView.image = UIImage(data: data!)
+                                    if let uiimage = UIImage(data: data!) as? UIImage {
+                                        self.snapshotImageView.image = uiimage
                                         print(self.snapshotImageView.image?.size)
                                     }
                                 }
@@ -95,6 +95,7 @@ class ViewController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         actionEnabled = "None"
+        ref.child(currentRoomNumber).child("interactive_settings").child("highlight_coordinates").updateChildValues(["x" : -1, "y" : -1])
     }
     
     
