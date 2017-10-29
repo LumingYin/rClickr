@@ -85,6 +85,7 @@
                                                 <state key="normal" title="Mic"/>
                                                 <connections>
                                                     <action selector="playPauseBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fao-M2-77m"/>
+                                                    <action selector="toggleMicInputPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xon-nK-c1y"/>
                                                 </connections>
                                             </button>
                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGk-YI-3nq">

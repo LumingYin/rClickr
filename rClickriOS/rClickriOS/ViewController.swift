@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var snapshotImageView: UIImageView!
     
+    @IBAction func toggleMicInputPressed(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
