@@ -44,6 +44,17 @@
                                     <action selector="nextSlide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gin-69-AZ9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSc-Hb-vOK">
+                                <rect key="frame" x="117" y="617" width="140" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Stop Sliding">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Z0a-Ng-Jfj" kind="show" id="EtL-6i-a5s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -51,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567" y="121"/>
+            <point key="canvasLocation" x="1678" y="-553"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="i3Y-C3-bI4">
@@ -124,4 +135,7 @@
         <image name="next_slide" width="419" height="419"/>
         <image name="prev_slide" width="419" height="419"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="EtL-6i-a5s"/>
+    </inferredMetricsTieBreakers>
 </document>
