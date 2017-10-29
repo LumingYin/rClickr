@@ -8,16 +8,24 @@
 
 import UIKit
 import FirebaseCommunity
+import Speech
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     var ref: DatabaseReference!
     var currentRoomNumber: String = "0000"
     var panGesture: UIPanGestureRecognizer!
     var actionEnabled: String!
+    var audioEnabled = false
     
     @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var snapshotImageView: UIImageView!
+ 
+    // MARK: Speech Recognition setup
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
     
     
     override func viewDidLoad() {
@@ -57,11 +65,25 @@ class ViewController: UIViewController {
             }
         }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        speechRecognizer.delegate = self
         
-        
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            OperationQueue.main.addOperation {
+                switch authStatus {
+                case .authorized:
+                    print("We're authorized ... starting to record")
+                case .denied:
+                    print("User denied access to speech recognition")
+                case .restricted:
+                    print("Speech recognition restricted on this device")
+                case .notDetermined:
+                    print("Speech recognition not yet authorized")
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,11 +91,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func prevSlide(_ sender: UIButton) {
+    @IBAction func prevSlide(_ sender: UIButton?) {
         self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "keyup", "completed": "false"])
     }
     
-    @IBAction func nextSlide(_ sender: UIButton) {
+    @IBAction func nextSlide(_ sender: UIButton?) {
         self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "keydown", "completed": "false"])
     }
     
@@ -134,5 +156,76 @@ class ViewController: UIViewController {
         self.ref.child(currentRoomNumber).childByAutoId().setValue(["timestamp" : Date.init().description, "action": "volumedown", "completed": "false"])
     }
     
+    
+    // MARK: Speech Recognition
+    private func startRecording() throws {
+        
+        // Cancel the previous task if it's running.
+        if let recognitionTask = recognitionTask {
+            recognitionTask.cancel()
+            self.recognitionTask = nil
+        }
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        try audioSession.setCategory(AVAudioSessionCategoryRecord)
+        try audioSession.setMode(AVAudioSessionModeMeasurement)
+        try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+        
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        
+        guard let inputNode = audioEngine.inputNode as? AVAudioInputNode else { fatalError("Audio engine has no input node") }
+        
+        guard let recognitionRequest = recognitionRequest else { fatalError("Unable to created a SFSpeechAudioBufferRecognitionRequest object") }
+        
+        // Configure request so that results are returned before audio recording is finished
+        recognitionRequest.shouldReportPartialResults = true
+        
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+            self.recognitionRequest?.append(buffer)
+        }
+        
+        audioEngine.prepare()
+        
+        try audioEngine.start()
+        
+        
+        // A recognition task represents a speech recognition session.
+        // We keep a reference to the task so that it can be cancelled.
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
+            var isFinal = false
+            
+            if let result = result {
+                let segments = result.bestTranscription.segments
+                print("segments: \(segments)")
+                let array = Array(result.bestTranscription.formattedString.components(separatedBy: " ").reversed())
+                var wordSet = Set<String>()
+                for i in array {
+                    wordSet.insert(i)
+                }
+                if wordSet.contains("next") || wordSet.contains("previous") || wordSet.contains("Next") || wordSet.contains("Previous") {
+                    if wordSet.contains("next") || wordSet.contains("Next") {
+                        self.nextSlide(nil)
+                        print("next")
+                    }
+                    if wordSet.contains("previous")  || wordSet.contains("Previous"){
+                        self.prevSlide(nil)
+                        print("prev")
+                    }
+                    self.audioEngine.stop()
+                    inputNode.removeTap(onBus: 0)
+                    
+                    try? self.startRecording()
+                } else {
+                    print("nothing found")
+                }
+                isFinal = result.isFinal
+            }
+            
+
+        }
+        
+        
+    }
 }
 

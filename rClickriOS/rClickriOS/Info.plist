@@ -26,6 +26,10 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Your microphone will be used to detect next and previous slide keywords</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Speech recognition used to determine if you want to move to the next or previous slide</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

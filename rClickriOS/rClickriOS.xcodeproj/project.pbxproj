@@ -374,7 +374,7 @@
 			baseConfigurationReference = 5EFD380F234AE0EFB270E933 /* Pods-rClickriOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q24729YL82;
+				DEVELOPMENT_TEAM = FY7422QAK2;
 				INFOPLIST_FILE = rClickriOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -390,7 +390,7 @@
 			baseConfigurationReference = 3071E89B25AE00DD0EC41D4C /* Pods-rClickriOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q24729YL82;
+				DEVELOPMENT_TEAM = FY7422QAK2;
 				INFOPLIST_FILE = rClickriOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
