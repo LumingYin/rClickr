@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseCommunity
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func prevSlide(_ sender: UIButton) {
+    }
+    
+    @IBAction func nextSlide(_ sender: UIButton) {
+    }
 
+    
 }
 
