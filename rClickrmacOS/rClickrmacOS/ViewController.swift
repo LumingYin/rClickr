@@ -98,9 +98,17 @@ class ViewController: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        if let fullScreenWindow = NSStoryboard.init(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "DotProjectionWindow")) as? DotProjectionWindowController {
-            fullScreenWindow.showWindow(nil)
-        }
+//        if let fullScreenWindow = NSStoryboard.init(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "DotProjectionWindow")) as? DotProjectionWindowController {
+//            fullScreenWindow.showWindow(nil)
+//        }
+        let test_panel = NSPanel.init(contentRect: NSMakeRect(300, 300, 500, 500), styleMask: NSWindow.StyleMask(rawValue: NSWindow.StyleMask.RawValue(UInt8(NSWindow.StyleMask.titled.rawValue) | UInt8(NSWindow.StyleMask.closable.rawValue))), backing: .buffered, defer: true)
+        test_panel.isReleasedWhenClosed = true
+        test_panel.hidesOnDeactivate = false
+        test_panel.isFloatingPanel = true
+        test_panel.styleMask = NSWindow.StyleMask(rawValue: NSWindow.StyleMask.RawValue(UInt8(NSWindow.StyleMask.borderless.rawValue) | UInt8(NSPanel.StyleMask.nonactivatingPanel.rawValue)))
+        test_panel.level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(kCGMainMenuWindowLevel - 1))
+//        test_panel.collectionBehavior = UInt8(NSWindow.CollectionBehavior.canJoinAllSpaces.rawValue) | NSWindow.CollectionBehavior.fullScreenAuxiliary
+//        test_panel.c
     }
 
     override var representedObject: Any? {

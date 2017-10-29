@@ -15,7 +15,12 @@ class DotProjectionViewController: NSViewController {
     }
     
     override func viewWillAppear() {
-        view.window?.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.floatingWindow)))
+//        view.window?.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.floatingWindow)))
+        
+//        view.window?.level = NSWindow.Level(rawValue: Int(CGShieldingWindowLevel()) + 1)
+        view.window?.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.maximumWindow)))
+
+//        view.window?.level = NSWindow.Level(rawValue: Int(.maximumWindow)))
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor.clear.cgColor
     }
