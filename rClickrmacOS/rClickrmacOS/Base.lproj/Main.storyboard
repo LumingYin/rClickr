@@ -734,7 +734,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="SXp-Hg-3Al">
                                     <font key="font" metaFont="system"/>
-                                    <mutableString key="title">Multiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline Label</mutableString>
+                                    <string key="title">Multiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline LabelMultiline Label</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -781,6 +781,17 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="takeScreenshot:" target="XfG-lQ-9wD" id="pFH-M0-Isk"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c46-Zz-wnH">
+                                <rect key="frame" x="73" y="47" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="xpcdebug" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ksx-em-bw7">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="xpcDebug:" target="XfG-lQ-9wD" id="Wi0-rs-ixk"/>
                                 </connections>
                             </button>
                         </subviews>
