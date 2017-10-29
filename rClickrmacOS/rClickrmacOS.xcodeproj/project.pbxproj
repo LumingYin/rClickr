@@ -419,7 +419,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocappathon.rClickrmacOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/numeric/Repos/rClickr/rClickrmacOS/rClickrmacOS/rClickermacOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "rClickrmacOS/rClickermacOS-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 			};
@@ -437,7 +437,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocappathon.rClickrmacOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/numeric/Repos/rClickr/rClickrmacOS/rClickrmacOS/rClickermacOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "rClickrmacOS/rClickermacOS-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 			};
