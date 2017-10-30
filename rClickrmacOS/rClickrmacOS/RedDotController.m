@@ -16,7 +16,6 @@
 
 @interface RedDotController ()
 @property (nonatomic, strong) ProjectionOverlayViewController *vc;
-//@property (nonatomic, strong) NSDistributedNotificationCenter *center;
 
 @end
 
@@ -60,7 +59,6 @@
     if (self.vc != nil) {
         
         NSRect newFrame = CGRectMake(wStart, hStart, self.vc.redDotView.frame.size.width, self.vc.redDotView.frame.size.height);
-//        self.vc.redDotView.animator.frame = newFrame;
         self.vc.redDotView.frame = newFrame;
         [self.vc.redDotView setNeedsDisplay: YES];
     }
@@ -76,12 +74,8 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(gotRedDot:) name:@"shouldMoveRedDot" object:nil];
     
-    //    [ws launchApplication:@"OtherApp.app"];
-    
     NSRect mainScreenRect = [[NSScreen mainScreen] frame];
     NSPanel *test_panel = [[NSPanel alloc] initWithContentRect:mainScreenRect styleMask:NSWindowStyleMaskTitled|NSWindowStyleMaskClosable backing:NSBackingStoreBuffered defer:YES];
-
-//    NSPanel *test_panel = [[NSPanel alloc] initWithContentRect:NSMakeRect(300, 300, 500, 500) styleMask:NSWindowStyleMaskTitled|NSWindowStyleMaskClosable backing:NSBackingStoreBuffered defer:YES];
     test_panel.backgroundColor = [NSColor clearColor];
     test_panel.hasShadow = NO;
     [test_panel setReleasedWhenClosed:YES];
@@ -90,16 +84,12 @@
     [test_panel setStyleMask:NSWindowStyleMaskBorderless | NSWindowStyleMaskNonactivatingPanel];
     [test_panel setLevel:kCGMainMenuWindowLevel-1];
     [test_panel  setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces|NSWindowCollectionBehaviorFullScreenAuxiliary];
-    //    [test_panel setCanBeVisibleOnAllSpaces:YES];
     [test_panel center];
     [test_panel orderFront:nil];
     
     self.vc = [[ProjectionOverlayViewController alloc] initWithNibName:@"ProjectionOverlayViewController" bundle:nil];
     self.vc.view.frame = mainScreenRect;
-//    tf.stringValue = @"dfsakjfdsaiufsadfas";
     test_panel.contentViewController = self.vc;
-
-    // Insert code here to initialize your application
 }
 
 static io_connect_t get_event_driver(void)
